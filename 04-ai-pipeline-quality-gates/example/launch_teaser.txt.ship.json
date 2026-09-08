@@ -1,0 +1,20 @@
+{
+  "lane": "brand-social",
+  "declared_by": "producer@example.com",
+  "date": "2026-09-08",
+  "content": {
+    "is_video": false,
+    "has_ai_generated_content": true,
+    "ai_disclosure_present": true,
+    "has_ai_generated_humans": true,
+    "names_real_people": ["Jane Example"],
+    "names_portrayed_by_ai_humans": [],
+    "ai_human_roles": "unnamed composite customers in a showroom, faces never held in close-up; narration names Jane Example only as the company founder in a caption",
+    "makes_factual_claims": true,
+    "claims_reviewed": true,
+    "uses_third_party_media": true,
+    "rights_cleared": true,
+    "has_onscreen_text": true,
+    "onscreen_text_proofread": true
+  }
+}

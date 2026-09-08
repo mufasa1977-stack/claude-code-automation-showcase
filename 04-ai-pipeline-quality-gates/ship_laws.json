@@ -1,0 +1,61 @@
+{
+  "version": "showcase-1.0",
+  "note": "Law registry for ship_door.py. Fail-closed: an applicable law with gate:null BLOCKS. hard:true laws are never disarmed by the bypass file. Replace or extend these with your organisation's own publishing rules; every law needs an executable gate or it blocks.",
+  "laws": [
+    {
+      "id": "real-person-likeness",
+      "hard": true,
+      "rule": "An AI-generated human may never portray a named real person. Keyed on an explicit list (content.names_portrayed_by_ai_humans), not on a boolean that can be argued either way.",
+      "applies_when": ["always"],
+      "gate": "inline:block_if_ai_human_portrays_named_real"
+    },
+    {
+      "id": "ai-disclosure",
+      "hard": true,
+      "rule": "AI-generated content must carry the platform-required AI disclosure.",
+      "applies_when": ["has_ai_generated_content"],
+      "gate": "inline:require_ai_disclosure"
+    },
+    {
+      "id": "rights-cleared",
+      "hard": true,
+      "rule": "Third-party music, footage or images ship only with cleared rights.",
+      "applies_when": ["uses_third_party_media"],
+      "gate": "inline:require_rights_cleared"
+    },
+    {
+      "id": "claims-reviewed",
+      "hard": false,
+      "rule": "Content making factual claims ships only after a review pass.",
+      "applies_when": ["makes_factual_claims"],
+      "gate": "inline:require_claims_reviewed"
+    },
+    {
+      "id": "onscreen-text-proofread",
+      "hard": false,
+      "rule": "Any on-screen text is proofread at the target surface's real scale (a caption that reads fine at 4K can be garbled at 1080p vertical).",
+      "applies_when": ["has_onscreen_text"],
+      "gate": "inline:require_text_proofread"
+    },
+    {
+      "id": "no-secrets-in-asset",
+      "hard": true,
+      "rule": "No credential, token or private key may leave the building inside a published file.",
+      "applies_when": ["always"],
+      "gate": {
+        "script": "../tools/secrets_scan.py",
+        "argv": ["{py}", "{script}", "--path", "{asset}", "--quiet"]
+      }
+    },
+    {
+      "id": "video-duration-sane",
+      "hard": false,
+      "rule": "Example of a wired external gate: a video must be within the surface's duration limits (script provided in gates/).",
+      "applies_when": ["is_video"],
+      "gate": {
+        "script": "gates/duration_gate.py",
+        "argv": ["{py}", "{script}", "--asset", "{asset}"]
+      }
+    }
+  ]
+}

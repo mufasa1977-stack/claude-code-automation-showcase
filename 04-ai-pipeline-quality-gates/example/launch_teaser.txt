@@ -1,0 +1,2 @@
+DEMO ASSET - stands in for a rendered video in the ship_door demo.
+(The door hashes whatever file it certifies; the cert is bound to these bytes.)

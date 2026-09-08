@@ -1,0 +1,9 @@
+name = "your-site"
+pages_build_output_dir = "_dist"
+
+[[kv_namespaces]]
+binding = "GO_COUNTS"
+id = "your-kv-namespace-id"
+
+# Set GO_STATS_KEY as a Pages project secret (dashboard or `wrangler pages secret put GO_STATS_KEY`).
+# Deploy: CLOUDFLARE_API_TOKEN=... wrangler pages deploy _dist

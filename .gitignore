@@ -1,0 +1,18 @@
+# credentials and local state never enter the repo
+.env
+*.env
+*credentials*.json
+*token*.txt
+*_state/
+_state.json
+_stats_log.jsonl
+uploaded.json
+*.ship_cert.json
+_GATES_BYPASS
+hook_retirements.json
+
+__pycache__/
+*.pyc
+node_modules/
+.wrangler/
+_dist/

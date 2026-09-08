@@ -1,0 +1,19 @@
+{
+  "lane": "brand-social",
+  "declared_by": "producer@example.com",
+  "date": "2026-09-08",
+  "content": {
+    "is_video": false,
+    "has_ai_generated_content": true,
+    "ai_disclosure_present": false,
+    "has_ai_generated_humans": true,
+    "names_real_people": ["Jane Example"],
+    "names_portrayed_by_ai_humans": ["Jane Example"],
+    "makes_factual_claims": false,
+    "claims_reviewed": false,
+    "uses_third_party_media": false,
+    "rights_cleared": false,
+    "has_onscreen_text": false,
+    "onscreen_text_proofread": false
+  }
+}
